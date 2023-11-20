@@ -24,11 +24,23 @@
 
 public class Attendence {
 	
-	public String PeopleF {
-		ArrayList<String> peoplef = new ArrayList<>();
-		peoplef.add("Sharon");
-		peoplef.add("Robin");
-		peoplef.add("Bertha");
-		peoplef.add(""); //continue to do this for the other names
-	}
+	private String fName;
+    private String lName;
+    private int attNum;
+    private int comp;
+
+    public Attendence(int RAttNum, String RLName, String RFName, int RComp)
+    {
+        RAttNum = attNum;
+        RLName = lNama;
+        RFName = fName;
+        RComp = comp;
+    }
+    
+    public String toString()
+    {
+        return fName + " " + lName + " from company " + comp + ": number";
+    }
+    
 }
+
