@@ -1,5 +1,10 @@
 import java.util.ArrayList;
 
+/**
+Uses a constructor to add a table
+Rest of the methods return various types of parts from each object
+/*
+
 public class Table {
 	
 	private int maxSize = 10;
