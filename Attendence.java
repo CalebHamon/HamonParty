@@ -1,46 +1,56 @@
-/*
- * Attendence.java
- * 
- * Copyright 2023 hamoncal25 <hamoncal25@US-CS-LAB-08>
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
- * MA 02110-1301, USA.
- * 
- * 
- */
-
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Attendence {
 	
+    public static ArrayList<Company> comp = new ArrayList<Company>();
 	private String fName;
     private String lName;
-    private int attNum;
-    private int comp;
+    private int compf;
 
-    public Attendence(int RAttNum, String RLName, String RFName, int RComp)
+    public Attendence(String RLName, String RFName, int RComp)
     {
-        RAttNum = attNum;
-        RLName = lNama;
-        RFName = fName;
-        RComp = comp;
+        addComp();
+        lName = RLName;
+        fName = RFName;
+        compf = RComp;
     }
-    
+
     public String toString()
     {
-        return fName + " " + lName + " from company " + comp + ": number";
+        return fName + " " + lName + " from " +  comp.get(compf -1).compName();
     }
+
+    public int compNum(){
+        return compf;
+    }
+
+    public String fname(){
+        return fName;
+    }
+
+    public String lname(){
+        return lName;
+    }
+
+    public static void addComp(){
+    try {
+      File myObj = new File("companies.txt");
+      Scanner myReader = new Scanner(myObj);
+      while (myReader.hasNextLine()) {
+        String data = myReader.nextLine();
+        String[] set = new String[2];
+        set = data.split(",");
+        Company b1 = new Company(Integer.parseInt(set[0]), set[1]);
+        comp.add(b1);
+      }
+      myReader.close();
+    } catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+  }
     
 }
-
