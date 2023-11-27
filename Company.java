@@ -1,3 +1,8 @@
+/**
+Uses a constructor to add a companies
+This converts numbers to company names and vice versa
+/*
+
 public class Company {
     private String compName;
     private int compNum;
