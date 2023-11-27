@@ -3,6 +3,12 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+Uses a constructor to add a roster
+Rest of the methods return various types of parts from each object
+Also uses readfile for companies to convert names to numbers and vice versa
+/*
+
 public class Attendence {
 	
     public static ArrayList<Company> comp = new ArrayList<Company>();
